@@ -1,0 +1,6 @@
+{
+  "name": "CHINESE HUT",
+  "description": "Premium Chinese food destination in Talegaon Dabhade. Authentic Hakka noodles, sizzling fried rice, crispy Manchurian, and wok specials.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
