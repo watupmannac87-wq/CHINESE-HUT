@@ -1,6 +1,7 @@
 import React from 'react';
 import { Flame, Clock, Utensils, MessageCircle, MapPin } from 'lucide-react';
 import { BUSINESS_INFO, IMAGES } from '../data/restaurantData';
+import { SafeImage } from './SafeImage';
 
 export const About: React.FC = () => {
   return (
@@ -10,14 +11,14 @@ export const About: React.FC = () => {
           {/* Left Column: Visual Food Montage with High Craft */}
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl shadow-black/80 group">
-              <img
+              <SafeImage
                 src={IMAGES.noodles}
+                fallbackSrc={IMAGES.noodlesLocal}
                 alt="Fresh wok-tossed Hakka noodles with vegetables at Chinese Hut"
                 className="w-full h-[380px] sm:h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
-                referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
               
               {/* Bottom overlay badge */}
               <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-zinc-900/90 backdrop-blur-md border border-zinc-700/60 flex items-center justify-between">

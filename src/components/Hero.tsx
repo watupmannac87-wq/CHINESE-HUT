@@ -1,18 +1,18 @@
 import React from 'react';
 import { Star, MessageCircle, ArrowRight, Clock, MapPin, Sparkles } from 'lucide-react';
 import { BUSINESS_INFO, IMAGES } from '../data/restaurantData';
+import { SafeImage } from './SafeImage';
 
 export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[92vh] sm:min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
       {/* Cinematic Background Image with Measured Scrim */}
       <div className="absolute inset-0 z-0">
-        <img
+        <SafeImage
           src={IMAGES.hero}
+          fallbackSrc={IMAGES.heroLocal}
           alt="Chef cooking stir-fry noodles in a flaming Chinese iron wok"
           className="w-full h-full object-cover object-center scale-105 transform motion-safe:animate-pulse [animation-duration:12s]"
-          referrerPolicy="no-referrer"
-          fetchPriority="high"
         />
         {/* Measured dark scrim for WCAG AA readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-[#0b0c10]/85 to-[#0b0c10]/60" />

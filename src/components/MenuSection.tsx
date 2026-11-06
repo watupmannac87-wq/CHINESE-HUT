@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { MENU_CATEGORIES, MENU_ITEMS, BUSINESS_INFO } from '../data/restaurantData';
 import { MenuCategory, MenuItem } from '../types';
+import { SafeImage } from './SafeImage';
 
 interface MenuSectionProps {
   onAddToCart: (item: MenuItem) => void;
@@ -209,11 +210,26 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
               return (
                 <div
                   key={dish.id}
-                  className="rounded-2xl bg-[#14151e] border border-zinc-800/80 hover:border-zinc-700 hover:shadow-xl hover:shadow-black/50 transition-all duration-200 p-5 flex flex-col justify-between group"
+                  className="rounded-2xl bg-[#14151e] border border-zinc-800/80 hover:border-zinc-700 hover:shadow-xl hover:shadow-black/50 transition-all duration-200 overflow-hidden flex flex-col justify-between group"
                 >
-                  <div>
-                    {/* Top indicator row: Veg/Non-veg symbol + Spice level + Category */}
-                    <div className="flex items-center justify-between gap-2 mb-3 text-xs text-zinc-400">
+                  {/* Dish Image Preview */}
+                  {dish.image && (
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-900">
+                      <SafeImage
+                        src={dish.image}
+                        fallbackSrc={dish.fallbackImage}
+                        alt={dish.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#14151e] via-transparent to-black/30 pointer-events-none" />
+                    </div>
+                  )}
+
+                  <div className="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                      {/* Top indicator row: Veg/Non-veg symbol + Spice level + Category */}
+                      <div className="flex items-center justify-between gap-2 mb-3 text-xs text-zinc-400">
                       <div className="flex items-center gap-2">
                         {/* Food Category standard Indian dot symbol */}
                         <div
@@ -305,7 +321,8 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                     </div>
                   </div>
                 </div>
-              );
+              </div>
+            );
             })}
           </div>
         )}

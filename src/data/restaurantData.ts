@@ -20,11 +20,30 @@ export const BUSINESS_INFO = {
 };
 
 export const IMAGES = {
-  hero: '/src/assets/images/chinese_hut_hero_wok_1793941869431.jpg',
-  noodles: '/src/assets/images/chinese_hut_hakka_noodles_1793941869765.jpg',
-  manchurian: '/src/assets/images/chinese_hut_manchurian_balls_1793941871536.jpg',
-  rice: '/src/assets/images/chinese_hut_schezwan_rice_1793941871108.jpg',
-  starters: '/src/assets/images/chinese_hut_crispy_starters_1793941871031.jpg',
+  // Public HTTPS URL from verified high-speed CDN as primary, and local /images/... in public folder
+  hero: 'https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=1600&q=80',
+  heroLocal: '/images/hero_wok.jpg',
+  heroUnsplashLocal: '/images/hero_wok_unsplash.jpg',
+
+  noodles: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=1200&q=80',
+  noodlesLocal: '/images/hakka_noodles.jpg',
+  noodlesUnsplashLocal: '/images/hakka_noodles_unsplash.jpg',
+
+  manchurian: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1200&q=80',
+  manchurianLocal: '/images/manchurian_balls.jpg',
+  manchurianUnsplashLocal: '/images/manchurian_balls_unsplash.jpg',
+
+  rice: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1200&q=80',
+  riceLocal: '/images/schezwan_rice.jpg',
+  riceUnsplashLocal: '/images/schezwan_rice_unsplash.jpg',
+
+  starters: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80',
+  startersLocal: '/images/crispy_starters.jpg',
+  startersUnsplashLocal: '/images/crispy_starters_unsplash.jpg',
+
+  paneer: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=1200&q=80',
+  chicken: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80',
+  fallbackSvg: '/images/fallback_food.svg',
 };
 
 export const MENU_CATEGORIES = [
@@ -48,6 +67,7 @@ export const MENU_ITEMS: MenuItem[] = [
     isPopular: true,
     samplePrice: 130,
     image: IMAGES.manchurian,
+    fallbackImage: IMAGES.manchurianLocal,
   },
   {
     id: 'starter-2',
@@ -58,6 +78,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Fiery',
     isPopular: true,
     samplePrice: 160,
+    image: IMAGES.paneer,
+    fallbackImage: IMAGES.startersLocal,
   },
   {
     id: 'starter-3',
@@ -68,6 +90,7 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Mild',
     samplePrice: 120,
     image: IMAGES.starters,
+    fallbackImage: IMAGES.startersLocal,
   },
   {
     id: 'starter-4',
@@ -77,6 +100,8 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     spiceLevel: 'Medium',
     samplePrice: 140,
+    image: IMAGES.starters,
+    fallbackImage: IMAGES.startersLocal,
   },
   {
     id: 'starter-5',
@@ -87,6 +112,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Fiery',
     isPopular: true,
     samplePrice: 190,
+    image: IMAGES.chicken,
+    fallbackImage: IMAGES.startersLocal,
   },
   {
     id: 'starter-6',
@@ -96,6 +123,8 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     spiceLevel: 'Fiery',
     samplePrice: 180,
+    image: IMAGES.chicken,
+    fallbackImage: IMAGES.startersLocal,
   },
 
   // Noodles
@@ -109,6 +138,7 @@ export const MENU_ITEMS: MenuItem[] = [
     isPopular: true,
     samplePrice: 120,
     image: IMAGES.noodles,
+    fallbackImage: IMAGES.noodlesLocal,
   },
   {
     id: 'noodle-2',
@@ -119,6 +149,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Fiery',
     isPopular: true,
     samplePrice: 130,
+    image: IMAGES.noodles,
+    fallbackImage: IMAGES.noodlesLocal,
   },
   {
     id: 'noodle-3',
@@ -128,6 +160,8 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     spiceLevel: 'Fiery',
     samplePrice: 140,
+    image: IMAGES.noodles,
+    fallbackImage: IMAGES.noodlesLocal,
   },
   {
     id: 'noodle-4',
@@ -137,6 +171,8 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     spiceLevel: 'Medium',
     samplePrice: 140,
+    image: IMAGES.noodles,
+    fallbackImage: IMAGES.noodlesLocal,
   },
   {
     id: 'noodle-5',
@@ -147,6 +183,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Medium',
     isPopular: true,
     samplePrice: 160,
+    image: IMAGES.noodles,
+    fallbackImage: IMAGES.noodlesLocal,
   },
   {
     id: 'noodle-6',
@@ -156,6 +194,8 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     spiceLevel: 'Fiery',
     samplePrice: 170,
+    image: IMAGES.noodles,
+    fallbackImage: IMAGES.noodlesLocal,
   },
 
   // Fried Rice
@@ -168,6 +208,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Mild',
     isPopular: true,
     samplePrice: 120,
+    image: IMAGES.rice,
+    fallbackImage: IMAGES.riceLocal,
   },
   {
     id: 'rice-2',
@@ -179,6 +221,7 @@ export const MENU_ITEMS: MenuItem[] = [
     isPopular: true,
     samplePrice: 130,
     image: IMAGES.rice,
+    fallbackImage: IMAGES.riceLocal,
   },
   {
     id: 'rice-3',
@@ -189,6 +232,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Fiery',
     isPopular: true,
     samplePrice: 170,
+    image: IMAGES.rice,
+    fallbackImage: IMAGES.riceLocal,
   },
   {
     id: 'rice-4',
@@ -198,6 +243,8 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     spiceLevel: 'Medium',
     samplePrice: 140,
+    image: IMAGES.rice,
+    fallbackImage: IMAGES.riceLocal,
   },
   {
     id: 'rice-5',
@@ -208,6 +255,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Fiery',
     isPopular: true,
     samplePrice: 170,
+    image: IMAGES.rice,
+    fallbackImage: IMAGES.riceLocal,
   },
 
   // Chinese Main Course
@@ -220,6 +269,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Medium',
     isPopular: true,
     samplePrice: 140,
+    image: IMAGES.manchurian,
+    fallbackImage: IMAGES.manchurianLocal,
   },
   {
     id: 'gravy-2',
@@ -230,6 +281,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Fiery',
     isPopular: true,
     samplePrice: 170,
+    image: IMAGES.paneer,
+    fallbackImage: IMAGES.startersLocal,
   },
   {
     id: 'gravy-3',
@@ -239,6 +292,8 @@ export const MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     spiceLevel: 'Fiery',
     samplePrice: 150,
+    image: IMAGES.hero,
+    fallbackImage: IMAGES.heroLocal,
   },
   {
     id: 'gravy-4',
@@ -249,6 +304,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Fiery',
     isPopular: true,
     samplePrice: 190,
+    image: IMAGES.chicken,
+    fallbackImage: IMAGES.startersLocal,
   },
 
   // Popular Combos
@@ -261,6 +318,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Medium',
     isPopular: true,
     samplePrice: 180,
+    image: IMAGES.noodles,
+    fallbackImage: IMAGES.noodlesLocal,
   },
   {
     id: 'combo-2',
@@ -271,6 +330,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Fiery',
     isPopular: true,
     samplePrice: 210,
+    image: IMAGES.rice,
+    fallbackImage: IMAGES.riceLocal,
   },
   {
     id: 'combo-3',
@@ -281,6 +342,8 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 'Medium',
     isPopular: true,
     samplePrice: 240,
+    image: IMAGES.hero,
+    fallbackImage: IMAGES.heroLocal,
   },
 ];
 
@@ -289,24 +352,28 @@ export const SHOWCASE_ITEMS = [
     title: 'Wok Hei Hakka Noodles',
     description: 'Pulled thin noodles stir-fried over roaring iron woks with crisp julienned vegetables and fragrant scallions.',
     image: IMAGES.noodles,
+    fallbackImage: IMAGES.noodlesLocal,
     tag: 'All-Time Favorite',
   },
   {
     title: 'Glossy Manchurian Dumplings',
     description: 'Crisp vegetable dumplings steeped in a rich, velvety dark soy, roasted garlic, and ginger glaze.',
     image: IMAGES.manchurian,
+    fallbackImage: IMAGES.manchurianLocal,
     tag: 'Signature Dish',
   },
   {
     title: 'Fiery Schezwan Fried Rice',
     description: 'Fluffy long-grain rice tossed in freshly ground Sichuan pepper oil with hand-diced fresh garden vegetables.',
     image: IMAGES.rice,
+    fallbackImage: IMAGES.riceLocal,
     tag: 'Customer Craving',
   },
   {
     title: 'Crisp Golden Spring Rolls',
     description: 'Delicately rolled pastries fried to an irresistible golden crunch, accompanied by homemade chili garlic dip.',
     image: IMAGES.starters,
+    fallbackImage: IMAGES.startersLocal,
     tag: 'Crispy Starter',
   },
 ];

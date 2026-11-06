@@ -10,6 +10,7 @@ export interface MenuItem {
   isPopular?: boolean;
   samplePrice: number;
   image?: string;
+  fallbackImage?: string;
 }
 
 export interface ReviewStat {

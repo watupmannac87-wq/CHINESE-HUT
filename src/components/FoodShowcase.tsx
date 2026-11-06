@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flame, MessageCircle, Sparkles } from 'lucide-react';
 import { SHOWCASE_ITEMS, BUSINESS_INFO } from '../data/restaurantData';
-import { MenuItem } from '../types';
+import { SafeImage } from './SafeImage';
 
 interface FoodShowcaseProps {
   onQuickOrder: (itemName: string) => void;
@@ -34,14 +34,14 @@ export const FoodShowcase: React.FC<FoodShowcaseProps> = ({ onQuickOrder }) => {
             >
               {/* Image Frame */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-zinc-900">
-                <img
+                <SafeImage
                   src={item.image}
+                  fallbackSrc={item.fallbackImage}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
                   loading="lazy"
-                  referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#14151e] via-transparent to-black/30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#14151e] via-transparent to-black/30 pointer-events-none" />
                 
                 {/* Clean unboxed tag */}
                 <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/10 text-[11px] font-bold text-amber-300">
